@@ -1,0 +1,80 @@
+.success {
+    color: rgb(50,255,55)
+}
+.canceled {
+    color: rgb(255,25,10)
+}
+.ontheway {
+    color: #00D1FF
+}
+.waiting {
+    color: #FF9900
+}
+.triggered :hover {
+    cursor: pointer;
+    background-color: lightslategray;
+    color: darkblue;
+}
+.description {
+    list-style-type:none;
+    text-align: left;
+    margin-left: 0px;
+}
+.waysred {
+    background-color: #BD0707;
+}
+.add-title {
+    text-align: left;
+}
+.form-box {
+    height: 50px;
+    border: 3px solid #BD0707;
+    color:#757575;
+    background-color: #f7f1f1;
+}
+.file {
+    padding: 0.5 rem 0.35 rem;
+    color:#757575;
+    background-color: #f7f1f1;
+}
+.jc-between {
+    justify-content: space-between;
+}
+.ai-center {
+    align-items: center;
+}
+.btn-auth-white {
+    background-color: white;
+    color: #BD0707;
+    border: 2px solid #BD0707;
+    border-radius: 5px;
+}
+.btn-auth-red {
+    background-color: #BD0707;
+    border-radius: 5px;
+}
+.btn-auth-red:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color:#BD0707;
+    border: 2px solid #BD0707;
+    font-weight: 500;
+}
+.cart {
+    position: relative;
+}
+.notif {
+    position: absolute;
+    left: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    color: white  !important;
+    text-decoration: none !important;
+}
+.trash-btn:hover {
+    cursor: pointer;
+}
+.point:hover {
+    cursor:pointer;
+}

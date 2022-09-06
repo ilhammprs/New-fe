@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.checkbox-toping{
+  display: none;
+}
+
+.checkbox-toping:checked+label::after{
+  content: url(/src/assets/check.png);
+  display: absolute;
+}
+.bgCard {
+  background-color:#F6E6DA !important;
+  border-radius: 12px !important;
+}
+
+.button-main{
+  background-color:#613D2B !important;
+}
+
+.button-log{
+  background-color: #613d2b45  !important;
+}
+
+.border-main{
+  background-color: #613d2b45  !important;
+  border-width: 2px ;
+}
+
+.detailprice {
+  text-align: right !important;
+  color:  #613D2B !important;
+  font-weight: 600 ;
+  font-size: 24px ;
+}
+
+.textname {
+  text-align: right !important;
+  color:  #613D2B !important;
+}
+
+.detaildesc {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: justify;
+}
+
+.brownbutton {
+  background-color: #613D2B !important;
+  height: 45px;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.brownbutton:hover {
+  background-color:#FFFFFF !important;
+  height: 45px;
+  color:  #613D2B !important;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.drop{
+  background: #000000 !important;
+}
+
+.input{
+  background:  #613d2b48 !important;
+}
