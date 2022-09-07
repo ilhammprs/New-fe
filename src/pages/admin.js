@@ -18,7 +18,7 @@ export default function IncomeTransaction() {
 
    // Fetching product data from database
    let { data: transactions } = useQuery("transactionsCache", async () => {
-    const response = await API.get("/transactions");
+    const response = await API.get("/transaction-user");
     return response.data.data;
   });
 
