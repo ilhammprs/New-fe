@@ -41,8 +41,7 @@ export default function NavbarLogin({show}) {
             <Nav.Link className="me-3 mt-2 text-danger">
               <Link to="/cart" className="text-decoration-none">
                 <div className="cart">
-                  <img src={cart} alt="" style={{ maxWidth: "40px" }} />
-                  <span className="notif" style={{backgroundColor:"red"}}>{show}</span>
+                  <img src={cart} style={{ maxWidth: "40px" }} />
                 </div>
               </Link>
             </Nav.Link>

@@ -48,13 +48,13 @@ export default function IncomeTransaction() {
                         <tr onClick={()=> handleTrans ()} key={index} >
                             <td>{index + 1}</td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.user.name}
+                                {item?.name}
                             </td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.user.profile?.address}
+                                {item?.address}
                             </td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.user.profile?.postal_code}
+                                {item?.postal_code}
                             </td>
                             <td style={{border:"1px solid grey"}}>
                                 {rp.convert(item?.total)}
