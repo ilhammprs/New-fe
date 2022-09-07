@@ -3,8 +3,7 @@ import { Container, Table } from "react-bootstrap";
 import "../assets/styles.css";
 import Trans from "../components/modal/trans";
 import NavbarAdmin from "../components/navbarAdmin";
-import { API } from "../config/api";
-import { useQuery } from "react-query";
+import { dataIncome } from '../components/fakedata';
 import rp from "rupiah-format";
 
 export default function IncomeTransaction() {
@@ -15,13 +14,6 @@ export default function IncomeTransaction() {
     setTransShow(true);
   };
   const handleClose = () => setTransShow(false);
-
-   // Fetching product data from database
-   let { data: transactions } = useQuery("transactionsCache", async () => {
-    const response = await API.get("/transactions");
-    return response.data.data;
-  });
-
   return (
     <div>
         <NavbarAdmin />
@@ -44,20 +36,22 @@ export default function IncomeTransaction() {
                         <Trans
                         transShow={transShow} Close={handleClose} 
                         />
-                    {transactions?.map((item, index) => (
-                        <tr onClick={()=> handleTrans ()} key={index} >
-                            <td>{index + 1}</td>
-                            <td style={{border:"1px solid grey"}}>
-                                {item?.name}
+                    {dataIncome.map((item, index) => (
+                        <tr onClick={()=> handleTrans ()} key={index}>
+                            <td>
+                                {index + 1}
                             </td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.address}
+                                {item.name}
                             </td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.postal_code}
+                                {item.address}
                             </td>
                             <td style={{border:"1px solid grey"}}>
-                                {rp.convert(item?.total)}
+                                {item.postcode}
+                            </td>
+                            <td style={{border:"1px solid grey"}}>
+                                {rp.convert(item.income)}
                             </td>
                             <td className={item.status} style={{border:"1px solid grey"}}>
                                 {item.status === "success" ? "Success" : item.status === "ontheway" ? "On The Way" : item.status === "waiting" ? "Waiting Approve" : item.status === "canceled" ? "Canceled": ""}
