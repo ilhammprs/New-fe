@@ -7,6 +7,7 @@ import { UserContext } from '../context/userContext';
 import { useQuery } from "react-query";
 import { API } from "../config/api";
 import NavbarLogin from '../components/navbarUser';
+import rp from "rupiah-format";
 
 export default function Profile() {
     const [state, dispatch] = useContext(UserContext)
@@ -14,6 +15,11 @@ export default function Profile() {
 
     let { data: users } = useQuery("profileCache", async () => {
         const response = await API.get("/profile-user");
+        return response.data.data;
+      });
+
+      let { data: trans } = useQuery("transactionsCache", async () => {
+        const response = await API.get("/transaction-user");
         return response.data.data;
       });
 
@@ -54,21 +60,9 @@ export default function Profile() {
                                     style={{width:"25%", borderRadius:"8px"}}
                                     />
                                     <ul className="text-start">
-                                        <li style={{listStyle:"none", fontSize:"8px"}}><h4 className='text-danger fw-bold'>Ice Coffee Palm Sugar</h4></li>
+                                        <li style={{listStyle:"none", fontSize:"8px"}}><h4 className='text-danger fw-bold'>{trans?.title}</h4></li>
                                         <li style={{listStyle:"none", fontSize:"14px"}}><p className='text-danger fw-normal'><span className='fw-bold'>Saturday,</span> 5 march 2020</p></li>
-                                        <li style={{listStyle:"none", fontSize:"14px"}}> <p className="fw-normal" style={{color:"#613D2B"}}>Price : Rp. <span>27.000,-</span></p></li>
-                                    </ul>
-                                </div>
-                                <div className="d-flex mb-2">
-                                    <img
-                                    src={iceblend}
-                                    style={{width:"25%", borderRadius:"8px"}}
-                                    />
-                                    <ul className="text-start">
-                                        <li style={{listStyle:"none", fontSize:"8px"}}><h4 className='text-danger fw-bold'>Ice Coffee Palm Sugar</h4></li>
-                                        <li style={{listStyle:"none", fontSize:"14px"}}><p className='text-danger fw-normal'><span className='fw-bold'>Saturday,</span> 5 march 2020</p></li>
-                                        <li style={{listStyle:"none", fontSize:"14px", marginBottom:"-10px"}}><p className='text-danger fw-semibold'> <snap className="fw-bold" style={{color:"#613D2B"}}>Topping :</snap> berry boba, mango boba</p></li>
-                                        <li style={{listStyle:"none", fontSize:"14px"}}> <p className="fw-normal" style={{color:"#613D2B"}}>Price : Rp. <span>27.000,-</span></p></li>
+                                        <li style={{listStyle:"none", fontSize:"14px"}}> <p className="fw-normal" style={{color:"#613D2B"}}>{rp.convert(trans?.price)}</p></li>
                                     </ul>
                                 </div>
                             </Row>

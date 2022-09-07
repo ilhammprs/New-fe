@@ -18,7 +18,7 @@ export default function IncomeTransaction() {
 
    // Fetching product data from database
    let { data: transactions } = useQuery("transactionsCache", async () => {
-    const response = await API.get("/transaction-user");
+    const response = await API.get("/transactions");
     return response.data.data;
   });
 
@@ -48,7 +48,7 @@ export default function IncomeTransaction() {
                         <tr onClick={()=> handleTrans ()} key={index} >
                             <td>{index + 1}</td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.name}
+                                {item?.user.name}
                             </td>
                             <td style={{border:"1px solid grey"}}>
                                 {item?.user.profile?.address}
