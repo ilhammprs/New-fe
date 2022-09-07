@@ -48,7 +48,7 @@ export default function IncomeTransaction() {
                         <tr onClick={()=> handleTrans ()} key={index} >
                             <td>{index + 1}</td>
                             <td style={{border:"1px solid grey"}}>
-                                {item?.user.name}
+                                {item?.name}
                             </td>
                             <td style={{border:"1px solid grey"}}>
                                 {item?.user.profile?.address}
