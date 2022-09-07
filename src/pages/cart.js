@@ -53,9 +53,7 @@ export default function Cart() {
       },
     };
     const body = JSON.stringify(form);
-
     const response = await API.patch("/transaction", body, config);
-
     const token = response.data.data.token;
 
     window.snap.pay(token, {
