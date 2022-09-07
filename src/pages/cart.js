@@ -15,6 +15,7 @@ export default function Cart() {
   const handlePay = () => setPayShow(true);
   const handleClose = () => setPayShow(false);
 
+
   const [listDel, setListDel] = useState(false);
   const handleDel = () => setListDel(true);
   const handleCloseDel = () => setListDel(false);
@@ -51,32 +52,31 @@ export default function Cart() {
         "Content-type": "application/json",
       },
     };
-const body = JSON.stringify(form);
+    const body = JSON.stringify(form);
 
     const response = await API.patch("/transaction", body, config);
-    response.data.token
+
+    const token = response.data.data.token;
 
     window.snap.pay(token, {
       onSuccess: function (result) {
         /* You may add your own implementation here */
-        console.log(result);
         navigate("/profile");
       },
       onPending: function (result) {
         /* You may add your own implementation here */
-        console.log(result);
         navigate("/profile");
       },
       onError: function (result) {
         /* You may add your own implementation here */
-        console.log(result);
       },
       onClose: function () {
         /* You may add your own implementation here */
         alert("you closed the popup without finishing the payment");
       },
     });
-    await API.patch("/cart", body, config);
+
+    await API.patch("/cart-id", body, config);
   });
 
   useEffect(() => {
