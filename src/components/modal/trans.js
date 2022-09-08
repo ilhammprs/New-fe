@@ -1,6 +1,5 @@
 import React from 'react'
 import {Modal, Col, Row} from 'react-bootstrap'
-import iceblend from '../../assets/ice-blend.png'
 import logo from '../../assets/logo.svg'
 import barcode from '../../assets/barcode.png'
 
