@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Container, Navbar } from "react-bootstrap";
 import logo from "../assets/Icon.svg";
 import AuthModal from "./modal/Auth";
-import Dark from "./modal/darkMode"
 
 export default function NavbarUser() {
   return (
