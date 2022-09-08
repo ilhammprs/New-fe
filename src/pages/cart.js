@@ -101,7 +101,7 @@ export default function Cart() {
       <Container className="mt-5">
         <Row>
           <Col xs={12} md={7} className="mt-5 py-5 px-4" style={{}}>
-            <div className="text-danger text-start">
+            <div className="text-start">
               <h3 className="  fw-bold">My Cart</h3>
               <p>Review your order</p>
             </div>
@@ -125,7 +125,7 @@ export default function Cart() {
                     <Col xs={12} md={6} style={{}}>
                       <ul className="description justify-content-start align-items-center pt-4 ps-0 mb-0">
                         <li>
-                          <p className="text-danger fw-bold">
+                          <p className="fw-bold">
                             {item?.product?.title}
                           </p>
                         </li>
@@ -134,7 +134,7 @@ export default function Cart() {
                     <Col xs={12} md={4} style={{}}>
                       <ul className="description text-end align-items-center pt-4 pr-3 ps-0 mb-0">
                         <li>
-                          <p className="text-danger fw-semibold">
+                          <p className="fw-semibold">
                              {rp.convert(item?.subtotal)}
                           </p>
                         </li>
@@ -168,26 +168,26 @@ export default function Cart() {
               }}
             >
               <div className="d-flex justify-content-between">
-                <p className="text-danger">Subtotal</p>
+                <p className="">Subtotal</p>
                 <p>{rp.convert(Total)}</p>
               </div>
               <div className="d-flex justify-content-between">
-                <p className="text-danger">Qty</p>
-                <p className="text-danger">{cart?.length}</p>
+                <p className="">Qty</p>
+                <p className="">{cart?.length}</p>
               </div>
             </div>
             <div
               className="d-flex justify-content-between"
               style={{ width: "80%" }}
             >
-              <p className="text-danger fw-bold">Total</p>
+              <p className="fw-bold">Total</p>
               <p>{rp.convert(Total)}</p>
             </div>
             <div className="mt-5" style={{ width: "80%" }}>
               <Button
                 type="submit"
                 onClick={(e) => handleSubmit.mutate(e)}
-                className="btn btn-danger fw-bold px-5"
+                className="btn fw-bold px-5"
                 style={{ width: "100%" }}
               >
                 Pay
