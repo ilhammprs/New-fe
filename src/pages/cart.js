@@ -156,7 +156,7 @@ export default function Cart() {
           </Col>
           <Col xs={12} md={5} className="mt-5 p-5">
             <div className="text-white">
-              <h3 className="  fw-bold">My Cart</h3>
+              <h3 className="fw-bold">My Cart</h3>
               <p>Review yor order</p>
             </div>
             <div
