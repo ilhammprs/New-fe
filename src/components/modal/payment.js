@@ -1,11 +1,7 @@
 import React from 'react'
 import {Modal} from 'react-bootstrap'
-// import iceblend from '../assets/ice-blend.png'
-// import logo from '../assets/logo.svg'
-// import barcode from '../assets/barcode.png'
 
 export default function PaymentModal(props) {
-  console.log(props);
   return (
     <Modal show={props.payShow} onHide={props.Close} 
     {...props}

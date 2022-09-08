@@ -5,7 +5,6 @@ import logo from '../../assets/logo.svg'
 import barcode from '../../assets/barcode.png'
 
 export default function TransModal({transShow, Close, id}) {
-    console.log(id);
     return (
     <Modal show={transShow} onHide={Close}
     size="lg"

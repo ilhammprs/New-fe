@@ -58,7 +58,6 @@ export default function AuthModal() {
       const body = JSON.stringify(form);
 
       // Insert data user to database
-      console.log(body);
       const response = await API.post('/login', body, config);
     
       // const { status, name, email, token } = response.data.data
@@ -74,7 +73,6 @@ export default function AuthModal() {
           navigate('/')
         }
       }
-      console.log(response);
 
     } catch (error) {
       const alert = (
@@ -83,7 +81,6 @@ export default function AuthModal() {
         </Alert>
       );
       setMessage(alert);
-      console.log(error);
     }
   });
 
