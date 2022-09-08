@@ -22,17 +22,13 @@ function App() {
   let navigate = useNavigate();
 
   const [state, dispatch] = useContext(UserContext);
-  console.log(state);
 
   useEffect(() => {
     if (localStorage.token) {
       setAuthToken(localStorage.token);
     }
-
-    // Redirect Auth
-    if (state.isLogin === false) {
-      navigate("/");
-    } else {
+    
+     else {
       if (state.user.status === "admin") {
         navigate("/admin");
       } else if (state.user.status === "customer") {
@@ -63,7 +59,6 @@ function App() {
         payload,
       });
     } catch (error) {
-      console.log(error);
     }
   };
 
