@@ -7,7 +7,6 @@ export default function NavbarUser() {
   return (
     <div>
       <Container>
-        <Dark/>
         <Navbar fixed="top d-flex bg-white justify-content-between border-bottom shadow">
           <Navbar.Brand className="ms-3 ps-5">
             <img src={logo} style={{ Width: "70px" }} alt="logobrand" />
