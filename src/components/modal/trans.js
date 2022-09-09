@@ -18,13 +18,9 @@ export default function TransModal({transShow, Close, id}) {
                     <Row className="p-3" style={{backgroundColor:"#F6DADA", borderRadius:"5px"}}>
                         <Col xs={12} md={8}>
                             <Row className="pt-2">
-                                {/* {income.map((value)=>( */}
                                     <div className="d-flex mb-2">
                                     <img
-                                    src=''
                                     style={{width:"25%", borderRadius:"8px"}}
-                                    className=''
-                                    alt=''
                                     />
                                     <ul className="text-start">
                                         <li style={{listStyle:"none", fontSize:"8px"}}><h4 className='text-danger fw-bold'>test</h4></li>
@@ -40,8 +36,6 @@ export default function TransModal({transShow, Close, id}) {
                                 <img
                                 src={logo}
                                 style={{width:"30%"}}
-                                className=''
-                                alt=''
                                 />
                             </div>
                             <div>
@@ -49,13 +43,12 @@ export default function TransModal({transShow, Close, id}) {
                                 src={barcode}
                                 style={{width:"40%"}}
                                 className='mb-3'
-                                alt=''
                                 />
                             </div>
                             <div className='d-flex justify-content-center mb-3' style={{backgroundColor:'rgb(255,175,25, 0.5)', borderRadius:"8px"}}>
                                 <p className='text-align-center fw-semibold' style={{color:"#FF9900"}}>Waiting Approve</p>
                             </div>
-                            <div className=''>
+                            <div>
                                 <p className='fw-bold' style={{color:"#974A4A"}}>Sub total : Rp. <span style={{color:"#974A4A"}}>27.000</span></p>
                             </div>
                         </Col>
