@@ -1,58 +1,58 @@
-import React from "react"
+import React, { useState, useMemo } from "react";
+import PropTypes from "prop-types";
+import { StarFill } from "react-bootstrap-icons";
 
-const Rating = ({value, color}) => {
-    return (
-        <div className="rating">
-            <span>
-                <i
-                  style={{ color }}
-                  className={
-                  value >= 1? `fas fa-start` : value>= 0.5 ? `fas fa-start-half-alt` : `far fa-start`
-                }
-                />
-            </span>
-            <span>
-                <i
-                  style={{ color }}
-                  className={
-                  value >= 2? `fas fa-start` : value>= 1.5 ? `fas fa-start-half-alt` : `far fa-start`
-                }
-                />
-            </span>
-            <span>
-                <i
-                  style={{ color }}
-                  className={
-                  value >= 3? `fas fa-start` : value>= 2.5 ? `fas fa-start-half-alt` : `far fa-start`
-                }
-                />
-            </span>
-            <span>
-                <i
-                  style={{ color }}
-                  className={
-                  value >= 4? `fas fa-start` : value>= 3.5 ? `fas fa-start-half-alt` : `far fa-start`
-                }
-                />
-            </span>
-            <span>
-                <i
-                  style={{ color }}
-                  className={
-                  value >= 5? `fas fa-start` : value>= 4.5 ? `fas fa-start-half-alt` : `far fa-start`
-                }
-                />
-            </span>
-            <span>
-                <i
-                  style={{ color }}
-                  className={
-                  value >= 1? `fas fa-start` : value>= 0.5 ? `fas fa-start-half-alt` : `far fa-start`
-                }
-                />
-            </span>
-        </div>
-    )
-}
-
-export default Rating
+const Rate = ({ count, rating, color, onRating }) => {
+    const [hoverRating, setHoverRating] = useState(0);
+  
+    const getColor = (index) => {
+      if (hoverRating >= index) {
+        return color.filled;
+      } else if (!hoverRating && rating >= index) {
+        return color.filled;
+      }
+  
+      return color.unfilled;
+    };
+  
+    const starRating = useMemo(() => {
+      return Array(count)
+        .fill(0)
+        .map((_, i) => i + 1)
+        .map((idx) => (
+          <StarFill
+          size={20}
+            key={idx}
+            className="cursor-pointer"
+            icon="star"
+            onClick={() => onRating(idx)}
+            style={{ color: getColor(idx) }}
+            onMouseEnter={() => setHoverRating(idx)}
+            onMouseLeave={() => setHoverRating(0)}
+          />
+        ));
+    }, [count, rating, hoverRating]);
+  
+    return <div>{starRating}</div>;
+  };
+  
+  Rate.propTypes = {
+    count: PropTypes.number,
+    rating: PropTypes.number,
+    onChange: PropTypes.func,
+    color: {
+      filled: PropTypes.string,
+      unfilled: PropTypes.string,
+    },
+  };
+  
+  Rate.defaultProps = {
+    count: 5,
+    rating: 0,
+    color: {
+      filled: "#f5eb3b",
+      unfilled: "#DCDCDC",
+    },
+  };
+  
+  export default Rate;
