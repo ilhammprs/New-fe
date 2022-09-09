@@ -8,6 +8,7 @@ import { UserContext } from "../context/userContext";
 import rp from "rupiah-format";
 import { useQuery } from "react-query";
 import { API } from "../config/api";
+import Rate from "../components/rating";
 
 function Landing() {
   const [state, dispatch] = useContext(UserContext);
@@ -45,6 +46,7 @@ function Landing() {
                <div className="text-danger text-decoration-none"> {rp.convert(item.price)}</div>
                <div className="text-danger text-decoration-none"> Stock : {item.stock}</div>
               </Card.Text>  
+              <Rate/>
             </Card.Body>
           </Card>
         </Link>
