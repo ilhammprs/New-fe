@@ -45,8 +45,8 @@ function Landing() {
               <Card.Text>
                <div className="text-danger text-decoration-none"> {rp.convert(item.price)}</div>
                <div className="text-danger text-decoration-none"> Stock : {item.stock}</div>
+               <Rate/>
               </Card.Text>  
-              <Rate/>
             </Card.Body>
           </Card>
         </Link>
